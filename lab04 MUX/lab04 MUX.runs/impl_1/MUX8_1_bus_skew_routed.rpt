@@ -1,0 +1,16 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Fri Nov 21 15:16:19 2025
+| Host         : DESKTOP-800PLQ8 running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file MUX8_1_bus_skew_routed.rpt -pb MUX8_1_bus_skew_routed.pb -rpx MUX8_1_bus_skew_routed.rpx
+| Design       : MUX8_1
+| Device       : 7a100tl-csg324
+| Speed File   : -2L  PRODUCTION 1.14 2018-01-25
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

@@ -1,0 +1,16 @@
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN V16} [get_ports {A[3]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN V17} [get_ports {A[2]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN R18} [get_ports {A[1]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P18} [get_ports {A[0]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U16} [get_ports {B[3]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U17} [get_ports {B[2]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN T18} [get_ports {B[1]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P17} [get_ports {B[0]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN L3} [get_ports {F[3]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN L4} [get_ports {F[2]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN M3} [get_ports {F[1]}]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN M4} [get_ports {F[0]}]
+
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN V14} [get_ports ADD_SUB]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P3} [get_ports Cout]
+

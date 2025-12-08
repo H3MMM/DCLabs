@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab03 decoder/lab03 decoder.srcs/sources_1/new/decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab03 decoder/lab03 decoder.srcs/sim_1/new/decoder_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_test

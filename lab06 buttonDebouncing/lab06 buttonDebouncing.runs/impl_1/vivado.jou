@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov 30 12:02:38 2025
+# Process ID         : 4076
+# Current directory  : D:/Labs/DCLabs/code/lab06 buttonDebouncing/lab06 buttonDebouncing.runs/impl_1
+# Command line       : vivado.exe -log buttonDebouncing.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source buttonDebouncing.tcl -notrace
+# Log file           : D:/Labs/DCLabs/code/lab06 buttonDebouncing/lab06 buttonDebouncing.runs/impl_1/buttonDebouncing.vdi
+# Journal file       : D:/Labs/DCLabs/code/lab06 buttonDebouncing/lab06 buttonDebouncing.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-800PLQ8
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 8845H w/ Radeon 780M Graphics
+# CPU Frequency      : 3793 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 25012 MB
+# Swap memory        : 2415 MB
+# Total Virtual      : 27427 MB
+# Available Virtual  : 11627 MB
+#-----------------------------------------------------------
+source buttonDebouncing.tcl -notrace

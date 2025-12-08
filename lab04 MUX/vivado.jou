@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Nov 16 22:51:36 2025
+# Process ID         : 15640
+# Current directory  : D:/Labs/DCLabs/code/lab04 MUX
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent22284 D:\Labs\DCLabs\code\lab04 MUX\lab04 MUX.xpr
+# Log file           : D:/Labs/DCLabs/code/lab04 MUX/vivado.log
+# Journal file       : D:/Labs/DCLabs/code/lab04 MUX\vivado.jou
+# Running On         : DESKTOP-800PLQ8
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 8845H w/ Radeon 780M Graphics
+# CPU Frequency      : 3793 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 25012 MB
+# Swap memory        : 2415 MB
+# Total Virtual      : 27427 MB
+# Available Virtual  : 11542 MB
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.xpr}
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse D:/Labs/DCLabs/code/MUX.xdc
+export_ip_user_files -of_objects  [get_files {{D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.srcs/constrs_1/new/MUX8_1.xdc}}] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 {{D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.srcs/constrs_1/new/MUX8_1.xdc}}
+file delete -force {D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.srcs/constrs_1/new/MUX8_1.xdc}

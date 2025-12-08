@@ -1,0 +1,12 @@
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN N5} [get_ports rst]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN E3} [get_ports clk]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN D3} [get_ports key_in]
+
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN L3} [get_ports led_out[7]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN L4} [get_ports led_out[6]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN M3} [get_ports led_out[5]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN M4} [get_ports led_out[4]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN N4} [get_ports led_out[3]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P3} [get_ports led_out[2]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P4} [get_ports led_out[1]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN R3} [get_ports led_out[0]]
