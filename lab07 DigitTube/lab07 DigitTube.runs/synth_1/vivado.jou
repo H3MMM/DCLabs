@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sat Dec  6 20:12:17 2025
-# Process ID         : 23992
+# Start of session at: Fri Dec 12 09:36:05 2025
+# Process ID         : 17524
 # Current directory  : D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.runs/synth_1
 # Command line       : vivado.exe -log Digit_Tube.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Digit_Tube.tcl
 # Log file           : D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.runs/synth_1/Digit_Tube.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 25012 MB
-# Swap memory        : 2415 MB
-# Total Virtual      : 27427 MB
-# Available Virtual  : 12893 MB
+# Swap memory        : 3758 MB
+# Total Virtual      : 28770 MB
+# Available Virtual  : 13135 MB
 #-----------------------------------------------------------
 source Digit_Tube.tcl -notrace

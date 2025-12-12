@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date             : Sat Dec  6 20:13:46 2025
+| Date             : Fri Dec 12 09:37:34 2025
 | Host             : DESKTOP-800PLQ8 running 64-bit major release  (build 9200)
 | Command          : report_power -file Digit_Tube_power_routed.rpt -pb Digit_Tube_power_summary_routed.pb -rpx Digit_Tube_power_routed.rpx
 | Design           : Digit_Tube
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 29.728 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 28.468 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 29.140                           |
+| Dynamic (W)              | 27.881                           |
 | Device Static (W)        | 0.587                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,18 +52,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     0.863 |      258 |       --- |             --- |
-|   LUT as Logic          |     0.803 |      118 |     63400 |            0.19 |
-|   Register              |     0.025 |       98 |    126800 |            0.08 |
-|   CARRY4                |     0.024 |       11 |     15850 |            0.07 |
-|   F7/F8 Muxes           |     0.006 |        4 |     63400 |           <0.01 |
+| Slice Logic             |     1.178 |      457 |       --- |             --- |
+|   LUT as Logic          |     1.102 |      170 |     63400 |            0.27 |
+|   Register              |     0.035 |      208 |    126800 |            0.16 |
+|   CARRY4                |     0.030 |       17 |     15850 |            0.11 |
+|   F7/F8 Muxes           |     0.007 |        5 |     63400 |           <0.01 |
 |   BUFG                  |     0.005 |        1 |        32 |            3.13 |
 |   LUT as Shift Register |    <0.001 |        4 |     19000 |            0.02 |
-|   Others                |     0.000 |        6 |       --- |             --- |
-| Signals                 |     1.591 |      260 |       --- |             --- |
-| I/O                     |    26.687 |       52 |       210 |           24.76 |
+|   Others                |     0.000 |        8 |       --- |             --- |
+| Signals                 |     1.669 |      450 |       --- |             --- |
+| I/O                     |    25.034 |       52 |       210 |           24.76 |
 | Static Power            |     0.587 |          |           |                 |
-| Total                   |    29.728 |          |           |                 |
+| Total                   |    28.468 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.900 |     3.258 |       2.866 |      0.392 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     1.066 |       0.973 |      0.093 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     7.522 |       7.518 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       0.900 |     3.696 |       3.303 |      0.392 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     1.006 |       0.913 |      0.093 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     7.054 |       7.050 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,10 +140,11 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| Digit_Tube |    29.140 |
-|   div      |     0.053 |
-|   hdu      |     0.861 |
-|   tube     |     1.367 |
+| Digit_Tube |    27.881 |
+|   HelloHdU |     0.913 |
+|   ILoveHdU |     0.716 |
+|   div      |     0.039 |
+|   tube     |     0.961 |
 +------------+-----------+
 
 

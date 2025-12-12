@@ -22,7 +22,7 @@
 
 `timescale 1ns / 1ps
 
-module FlowHDU(
+module HelloHdU(
     input rst,
     input clk_100MHz,
     output reg [7:0] AN,
@@ -30,12 +30,12 @@ module FlowHDU(
     );
 
   
-    parameter H_char = 8'b1001_0001; 
-    parameter E_char = 8'b0110_0001; 
-    parameter L_char = 8'b1110_0011; 
-    parameter o_char = 8'b1100_0101; 
-    parameter d_char = 8'b1000_0101; 
-    parameter U_char = 8'b1000_0011; 
+    parameter H = 8'b1001_0001; 
+    parameter E = 8'b0110_0001; 
+    parameter L = 8'b1110_0011; 
+    parameter o = 8'b1100_0101; 
+    parameter d = 8'b1000_0101; 
+    parameter U = 8'b1000_0011; 
     parameter BLANK  = 8'b1111_1111; 
 
     wire clk_fresh;
@@ -80,7 +80,7 @@ module FlowHDU(
     assign clk_200ms = (count == 20000000);
   
     reg [63:0] shift_reg; 
-    reg [5:0]  wait_timer; // 5秒计数器
+    reg [4:0]  wait_timer; // 3秒计数器
     
   
     localparam [31:0] hdu = 32'h01223045; 
@@ -92,7 +92,7 @@ module FlowHDU(
         end 
         else if (clk_200ms) begin
             if (shift_reg[31:0] == hdu) begin
-                if (wait_timer < 25) begin
+                if (wait_timer < 15) begin //0.2*15=3s
                     wait_timer <= wait_timer + 1'b1;
                 end else begin
                     wait_timer <= 0; 
@@ -107,31 +107,31 @@ module FlowHDU(
     end
 
 
-    reg [3:0] current_char_index;
+    reg [3:0] current_index;
    
     always @(*) begin
         case (bit_select)
-            3'd0: current_char_index = shift_reg[3:0];   
-            3'd1: current_char_index = shift_reg[7:4];
-            3'd2: current_char_index = shift_reg[11:8];
-            3'd3: current_char_index = shift_reg[15:12];
-            3'd4: current_char_index = shift_reg[19:16];
-            3'd5: current_char_index = shift_reg[23:20];
-            3'd6: current_char_index = shift_reg[27:24];
-            3'd7: current_char_index = shift_reg[31:28]; 
-            default: current_char_index = 4'hF;
+            3'd0: current_index = shift_reg[3:0];   
+            3'd1: current_index = shift_reg[7:4];
+            3'd2: current_index = shift_reg[11:8];
+            3'd3: current_index = shift_reg[15:12];
+            3'd4: current_index = shift_reg[19:16];
+            3'd5: current_index = shift_reg[23:20];
+            3'd6: current_index = shift_reg[27:24];
+            3'd7: current_index = shift_reg[31:28]; 
+            default: current_index = 4'hF;
         endcase
     end
 
 
     always @(*) begin
-        case (current_char_index)
-            4'h0: SEG = H_char;
-            4'h1: SEG = E_char;
-            4'h2: SEG = L_char;
-            4'h3: SEG = o_char;
-            4'h4: SEG = d_char;
-            4'h5: SEG = U_char;
+        case (current_index)
+            4'h0: SEG = H;
+            4'h1: SEG = E;
+            4'h2: SEG = L;
+            4'h3: SEG = o;
+            4'h4: SEG = d;
+            4'h5: SEG = U;
             4'hF: SEG = BLANK;
             default: SEG = BLANK;
         endcase

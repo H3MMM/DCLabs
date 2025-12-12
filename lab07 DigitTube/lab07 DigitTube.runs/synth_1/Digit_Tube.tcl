@@ -75,7 +75,8 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/Fdiv.v}
-  {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/FlowHDU.v}
+  {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/HelloHdU.v}
+  {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/ILoveHdU.v}
   {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/MUX.v}
   {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/Tube.v}
   {D:/Labs/DCLabs/code/lab07 DigitTube/lab07 DigitTube.srcs/sources_1/new/Digit_Tube.v}
