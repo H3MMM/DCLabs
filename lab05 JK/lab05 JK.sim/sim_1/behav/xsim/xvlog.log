@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab05 JK/lab05 JK.srcs/sources_1/new/JK.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module JK
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab05 JK/lab05 JK.srcs/sim_1/new/JKtest.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module JKtest

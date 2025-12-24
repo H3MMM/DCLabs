@@ -32,3 +32,4 @@ webtalk*.jou
 !*.xpr
 !*.srcs/
 !*.sdk/
+!*.md

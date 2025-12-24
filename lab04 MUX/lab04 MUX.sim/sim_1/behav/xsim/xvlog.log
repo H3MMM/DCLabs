@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.srcs/sources_1/new/MUX4_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MUX4_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.srcs/sources_1/new/MUX8_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MUX8_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Labs/DCLabs/code/lab04 MUX/lab04 MUX.srcs/sim_1/new/MUX8_1test.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MUX8_1test
