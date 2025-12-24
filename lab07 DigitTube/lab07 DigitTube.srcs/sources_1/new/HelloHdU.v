@@ -6,7 +6,13 @@
 // Create Date: 2025/12/05 20:13:30
 // Design Name: 
 // Module Name: FlowHDU
-// Project Name: 
+// Project Name: 88
+
+
+
+
+
+
 // Target Devices: 
 // Tool Versions: 
 // Description: 
@@ -25,6 +31,7 @@
 module HelloHdU(
     input rst,
     input clk_100MHz,
+    input [1:0] Sel,
     output reg [7:0] AN,
     output reg [7:0] SEG
     );
@@ -38,16 +45,16 @@ module HelloHdU(
     parameter U = 8'b1000_0011; 
     parameter BLANK  = 8'b1111_1111; 
 
-    wire clk_fresh;
+    wire clk_2ms;
     reg [2:0] bit_select;
     
     Fdiv div(
         .clk(clk_100MHz),
         .rst(rst),
-        .clk_fresh(clk_fresh)
+        .clk_fresh(clk_2ms)
     );
 
-    always @(posedge rst or posedge clk_fresh) begin
+    always @(posedge rst or posedge clk_2ms) begin
         if (rst) bit_select <= 0;
         else bit_select <= bit_select + 1'b1;
     end
@@ -67,17 +74,18 @@ module HelloHdU(
     end
 
     
-    wire clk_200ms;
+    wire clk_100ms;
     reg [25:0] count;
     
+    //手动分频100ms = 0.1s
     always @(posedge rst or posedge clk_100MHz) begin
         if(rst) count <= 0;
         else begin
-            if (count >= 20000000) count <= 0;
+            if (count >= 10000000) count <= 0;
             else count <= count + 1'b1;
         end
     end
-    assign clk_200ms = (count == 20000000);
+    assign clk_100ms = (count == 10000000);
   
     reg [63:0] shift_reg; 
     reg [4:0]  wait_timer; // 3秒计数器
@@ -87,18 +95,18 @@ module HelloHdU(
 
     always @(posedge rst or posedge clk_100MHz) begin
         if (rst) begin
-            shift_reg <= {32'h01223045, 32'hFFFFFFFF};
+            shift_reg <= {32'h01223045,32'hFFFFFFFF};
             wait_timer <= 0;
         end 
-        else if (clk_200ms) begin
+        else if (clk_100ms & (Sel == 2'b11)) begin
             if (shift_reg[31:0] == hdu) begin
-                if (wait_timer < 15) begin //0.2*15=3s
+                if (wait_timer < 30) begin // 0.1*30=3s
                     wait_timer <= wait_timer + 1'b1;
                 end else begin
                     wait_timer <= 0; 
                     shift_reg <= {shift_reg[59:0], shift_reg[63:60]};
                 end
-            end 
+            end
             else begin
                 shift_reg <= {shift_reg[59:0], shift_reg[63:60]};
                 wait_timer <= 0;

@@ -1,0 +1,34 @@
+# --- Vivado 核心生成文件 (必须忽略) ---
+.Xil/
+*.jou
+*.log
+*.str
+*.tmp
+
+# --- 编译、综合与实现结果 (体积巨大，可重新生成) ---
+# 对应截图中的 lab03 decoder.runs 等文件夹
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+
+# --- 导出与临时文件 ---
+# 对应截图中的 dfx_runtime.txt
+dfx_runtime.txt
+usage_statistics_webtalk.html
+usage_statistics_webtalk.xml
+webtalk*.log
+webtalk*.jou
+
+# --- 本地用户设置 ---
+# 如果你不希望特定的 SDK 工作区配置被提交
+.sdk/
+.metadata/
+*.launch
+
+# --- 哪怕你用了通配符，也要确保这些文件被保留 (可选的安全措施) ---
+# 你的核心代码都在这里，千万别忽略了
+!*.xpr
+!*.srcs/
+!*.sdk/

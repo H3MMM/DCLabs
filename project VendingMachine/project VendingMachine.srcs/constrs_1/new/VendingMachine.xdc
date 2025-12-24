@@ -1,0 +1,38 @@
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN E3} [get_ports clk]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN D15} [get_ports CLR]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN N5} [get_ports seortb]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P5} [get_ports get]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN G16} [get_ports sel]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN C15} [get_ports finish]
+
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U11} [get_ports k[7]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U12} [get_ports k[6]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U13} [get_ports k[5]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN V14} [get_ports k[4]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U16} [get_ports k[3]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN U17} [get_ports k[2]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN T18} [get_ports k[1]]
+set_property -dict {IOSTANDARD LVCMOS33 PACKAGE_PIN P17} [get_ports k[0]]
+
+
+# 数码管的段选引脚约束
+set_property IOSTANDARD LVCMOS33 [get_ports SEG]
+set_property PACKAGE_PIN E2 [get_ports {SEG[7]}]
+set_property PACKAGE_PIN A3 [get_ports {SEG[6]}]
+set_property PACKAGE_PIN B1 [get_ports {SEG[5]}]
+set_property PACKAGE_PIN E1 [get_ports {SEG[4]}]
+set_property PACKAGE_PIN F1 [get_ports {SEG[3]}]
+set_property PACKAGE_PIN D2 [get_ports {SEG[2]}]
+set_property PACKAGE_PIN B3 [get_ports {SEG[1]}]
+set_property PACKAGE_PIN C1 [get_ports {SEG[0]}]
+
+# 数码管的位选及使能信号的约束
+set_property IOSTANDARD LVCMOS33 [get_ports AN]
+set_property PACKAGE_PIN G1 [get_ports {AN[7]}]
+set_property PACKAGE_PIN B2 [get_ports {AN[6]}]
+set_property PACKAGE_PIN A1 [get_ports {AN[5]}]
+set_property PACKAGE_PIN B4 [get_ports {AN[4]}]
+set_property PACKAGE_PIN A4 [get_ports {AN[3]}]
+set_property PACKAGE_PIN A5 [get_ports {AN[2]}]
+set_property PACKAGE_PIN B6 [get_ports {AN[1]}]
+set_property PACKAGE_PIN A6 [get_ports {AN[0]}]

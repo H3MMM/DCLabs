@@ -25,8 +25,8 @@ module Digit_Tube(
         input clk_100MHz,
         input [31:0]SW,
         input [1:0] Sel,
-        output reg [7:0] AN,
-        output reg [7:0] SEG
+        output [7:0] AN,
+        output [7:0] SEG
     );
 
     wire clk_fresh;
@@ -35,13 +35,11 @@ module Digit_Tube(
     wire [31:0] C;
     wire [31:0] Data;
 
-    wire [7:0] AN_tube, SEG_tude; 
-    wire [7:0] AN_HelloHdU, SEG_HelloHdU;  
-    wire [7:0] AN_ILovEHdU, SEG_ILovEHdU;  
+    wire [7:0] AN_tube, SEG_tube; 
+    wire [7:0] AN_hdu, SEG_hdu;  
 
     assign A = 32'h12345678;
-    assign B = 32'h87654321;
-    assign C = 32'hABCDEF;
+    assign B = 32'h9ABCDEF0;
 
     Fdiv div(
         .clk(clk_100MHz),
@@ -52,9 +50,9 @@ module Digit_Tube(
     MUX mux(
         .Sel(Sel),
         .A(SW),
-        .B(),
-        .C(),
-        .D(C),
+        .B(A),
+        .C(B),
+        .D(),
         .Y(Data)
     );
 
@@ -63,43 +61,19 @@ module Digit_Tube(
         .clk_fresh(clk_fresh),
         .Data(Data),
         .AN(AN_tube),
-        .SEG(SEG_tude)
+        .SEG(SEG_tube)
     );
 
-    HelloHdU HelloHdU(
+    HelloHdU hdu(
         .rst(rst),
         .clk_100MHz(clk_100MHz),
-        .AN(AN_HelloHdU),
-        .SEG(SEG_HelloHdU)
+        .Sel(Sel),
+        .AN(AN_hdu),
+        .SEG(SEG_hdu)
     );
 
-    ILoveHdU ILoveHdU(
-        .rst(rst),
-        .clk_100MHz(clk_100MHz),
-        .AN(AN_ILovEHdU),
-        .SEG(SEG_ILovEHdU)
-    );
-
-    always @(*) begin
-    case (Sel)
-        2'b01: begin
-            AN  = AN_HelloHdU;
-            SEG = SEG_HelloHdU;
-        end
-        
-        2'b10: begin
-            AN = AN_ILovEHdU;
-            SEG = SEG_ILovEHdU;
-        end
-        
-        default: begin
-            AN  = AN_tube;
-            SEG = SEG_tude;
-        end
-    endcase
-end
-
-    
+    assign AN  = (Sel == 2'b11) ? AN_hdu : AN_tube;
+    assign SEG = (Sel == 2'b11) ? SEG_hdu : SEG_tube;
 
 
 endmodule
