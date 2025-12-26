@@ -23,6 +23,7 @@
 module Tube(
         input rst,
         input clk_fresh,
+        input clk_blink,
         input [31:0] Data,
         output reg [7:0] AN,
         output reg [7:0] SEG
@@ -58,15 +59,18 @@ module Tube(
             1:data_x = Data[7:4];
             2:data_x = Data[11:8];
             3:data_x = Data[15:12];
-            4:data_x = 4'hf;
-            5:data_x = 4'hf;
-            6:data_x = 4'hf;
-            7:data_x = 4'hf;
         endcase
     end
 
     always @(*) begin
-        case (data_x)
+        if(bit_select == 3'd3 && clk_blink == 1'b1) begin
+            SEG = 8'b1111_1111;
+        end
+        else if (bit_select == 3'd7 || bit_select == 3'd6 ||bit_select == 3'd5 ||bit_select == 3'd4)begin
+            SEG = 8'b1111_1101;
+        end
+        else begin
+            case (data_x)
             4'h0:SEG = 8'b0000_0011;
             4'h1:SEG = 8'b1001_1111;
             4'h2:SEG = 8'b0010_0101;
@@ -82,7 +86,8 @@ module Tube(
             4'hC:SEG = 8'b0110_0011;
             4'hD:SEG = 8'b1000_0101;
             4'hE:SEG = 8'b0110_0001;
-            4'hF:SEG = 8'b1111_1101;
+            4'hF:SEG = 8'b0111_0001;
         endcase
+        end
     end
 endmodule

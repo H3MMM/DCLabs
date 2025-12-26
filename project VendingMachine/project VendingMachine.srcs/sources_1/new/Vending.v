@@ -43,6 +43,17 @@ module Vending(
     wire get_pulse    = get & ~get_prev;
     wire sel_pulse    = sel & ~sel_prev;
     wire finish_pulse = finish & ~finish_prev;
+
+    wire [3:0] bcd_h;
+    wire [3:0] bcd_t;
+    wire [3:0] bcd_o;
+
+    BinToBCD u_converter(
+        .bin_in({1'b0, money}),
+        .hundreds(bcd_h),
+        .tens(bcd_t),
+        .ones(bcd_o)
+    );
    
     always@(posedge CLK or posedge CLR) begin
         if(CLR) begin
@@ -70,8 +81,9 @@ module Vending(
             end
             //补货功能
             if(k[7]) begin
+                money <= 0; //补货时清零余额
                if(seortb_pulse) begin
-                    nums[count] <= nums[count] + k[3:0];
+                    nums[count] <= k[3:0];
                     price[count] <= k[6:4];
                end
             end
@@ -104,10 +116,10 @@ module Vending(
     end
     else begin
         if (finish) begin
-            outputData = {9'b0, money};
+            outputData = {4'b0, bcd_h, bcd_t, bcd_o};
         end
         else if (seortb) begin
-            outputData = {9'b0, money};
+            outputData = {4'b0, bcd_h, bcd_t, bcd_o};
         end
         else begin
             outputData = {2'b0, count,1'b0, price[count], nums[count], haveBuy};

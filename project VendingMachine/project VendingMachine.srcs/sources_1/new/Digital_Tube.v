@@ -29,19 +29,22 @@ module Digit_Tube(
     );
 
     wire clk_fresh;
+    wire clk_blink;
     wire [31:0] Data_BCD;
     assign Data_BCD = {16'b0, Data};
 
     Fdiv div(
         .clk(clk_100MHz),
         .rst(rst),
-        .clk_fresh(clk_fresh)
+        .clk_fresh(clk_fresh),
+        .clk_blink(clk_blink)
     );
   
 
     Tube tube(
         .rst(rst),
         .clk_fresh(clk_fresh),
+        .clk_blink(clk_blink),
         .Data(Data_BCD),
         .AN(AN),
         .SEG(SEG)
